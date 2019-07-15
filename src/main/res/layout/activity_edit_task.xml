@@ -1,0 +1,152 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.task.taskreminder.EditTask">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:editable="true"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:text="@string/txt_edit_hint" />
+
+            <ScrollView
+                android:id="@+id/scrollView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txttitle"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:editable="true"
+                    android:lines="5"
+                    android:singleLine="false"
+                    android:text="@string/detail_hint" />
+            </ScrollView>
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingTop="30dp">
+
+                <TextView
+                    android:id="@+id/txtNoteType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/type_note"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinnerNoteType"
+                    android:layout_width="204dp"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/description"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toEndOf="@+id/txttitle"
+                    android:layout_toRightOf="@+id/txttitle"
+                    android:entries="@array/note_type" />
+            </GridLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinnerNoteType"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:paddingTop="35dp">
+
+                <CheckBox
+                    android:id="@+id/chkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spinnerNoteType"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/set_alert" />
+
+                <CheckBox
+                    android:id="@+id/chkbox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spinnerNoteType"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/set_notify" />
+
+                <TextView
+                    android:id="@+id/txt_selectdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:text="@string/textview_date"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <DatePicker
+                    android:id="@+id/datePicker2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/chkbox"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:calendarViewShown="false"
+                    android:headerBackground="@color/purple" />
+
+                <TextView
+                    android:id="@+id/txt_selecttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:text="@string/txt_time"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <TimePicker
+                    android:id="@+id/timePicker2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:headerBackground="@color/purple" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

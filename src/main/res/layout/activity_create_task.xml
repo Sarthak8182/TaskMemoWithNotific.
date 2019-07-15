@@ -1,0 +1,214 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.task.taskreminder.CreateTask">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinnerNoteType"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+            </GridLayout>
+
+            <EditText
+                android:id="@+id/txttitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnBack"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:editable="true"
+                android:hint="@string/title_hint"
+                android:maxLength="25"
+                android:paddingTop="20dp"
+                android:singleLine="true"
+                android:textColor="@android:color/holo_orange_dark" />
+
+            <ScrollView
+                android:id="@+id/scrollView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txttitle"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:editable="true"
+                    android:hint="@string/hint_description"
+                    android:lines="5"
+                    android:maxLength="140"
+                    android:nestedScrollingEnabled="false"
+                    android:singleLine="false"
+                    android:textColor="@android:color/holo_orange_dark" />
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="50dp">
+
+                <TextView
+                    android:id="@+id/txtNoteType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="10dp"
+                    android:text="@string/note_type_text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/blue" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/black"></View>
+
+                <Spinner
+                    android:id="@+id/spinnerNoteType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description"
+                    android:entries="@array/note_type"
+
+                    android:spinnerMode="dialog"
+
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@android:color/black"></View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="50dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Do U Want to Set Alert?"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    style="@android:style/Widget.Material.Light.CompoundButton.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spinnerNoteType"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="3dp"
+                    android:enabled="false"
+                    android:text="@string/set_alert"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="35dp"
+                    android:text="Do U Want to Notify?Choose Notify"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    style="@android:style/Widget.Material.Light.CompoundButton.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spinnerNoteType"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="3dp"
+                    android:enabled="false"
+                    android:text="@string/set_alert"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="35dp"
+                    android:text="@string/textview_date"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/blue" />
+
+                <DatePicker
+                    android:id="@+id/datePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:calendarViewShown="true"
+                    android:clickable="true"
+                    android:headerBackground="@color/purple"
+                    android:spinnersShown="false" />
+
+                <TextView
+                    android:id="@+id/txtTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="30dp"
+                    android:text="@string/txt_time"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/blue" />
+
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:headerBackground="@color/purple" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
